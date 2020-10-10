@@ -2,30 +2,30 @@
     {
         "name" : "Shyamal",
         "age" : 19,
-        "image" : "prac9.png"
+        "image" : "shyamal.jpg"
     },
 
     {
         "name" : "Devansh",
         "age" : 19,
-        "image" : "prac9.png"
+        "image" : "devansh.jpg"
     },
 
     {
         "name" : "Devyesh",
         "age" : 18,
-        "image" : "prac9.png"
+        "image" : "devyesh.jpg"
     },
 
     {
         "name" : "Tauhid",
         "age" : 20,
-        "image" : "prac9.png"
+        "image" : "tauhid.jpg"
     },
 
     {
         "name" : "Parth",
         "age" : 20,
-        "image" : "prac9.png"
+        "image" : "parth.jpg"
     }
 ]
