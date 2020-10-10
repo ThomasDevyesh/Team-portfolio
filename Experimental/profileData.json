@@ -1,0 +1,31 @@
+[
+    {
+        "name" : "Shyamal",
+        "age" : 19,
+        "image" : "prac9.png"
+    },
+
+    {
+        "name" : "Devansh",
+        "age" : 19,
+        "image" : "prac9.png"
+    },
+
+    {
+        "name" : "Devyesh",
+        "age" : 18,
+        "image" : "prac9.png"
+    },
+
+    {
+        "name" : "Tauhid",
+        "age" : 20,
+        "image" : "prac9.png"
+    },
+
+    {
+        "name" : "Parth",
+        "age" : 20,
+        "image" : "prac9.png"
+    }
+]
