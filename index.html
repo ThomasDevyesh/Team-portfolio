@@ -79,10 +79,26 @@
 
         .card{
           width: 50%;
-          height: auto;
-          
-
+          height: auto; 
         }
+        .list-group{
+          width: 20%;
+          margin-left: 20px;
+        }
+        li:hover{
+          width: 101%;
+          margin-left: 18px;
+        }
+        .text-decoration-none{
+          color: rgb(46, 46, 46);
+          font-family: Arial, Helvetica, sans-serif;
+          border-radius: 4px;
+        }
+        .text-decoration-none:hover{
+          color: rgb(0, 0, 0);
+        }
+
+
         @media only screen and (max-width: 500px) {
           .cover-container{
             margin-top: 20%;
@@ -93,6 +109,12 @@
             margin-left: 5%;
             margin-right: 5%;
           }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
         }
         @media only screen and (max-width: 1000px) {
           .cover-container{
@@ -104,6 +126,12 @@
             margin-left: 5%;
             margin-right: 5%;
           }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
         }
         
 
@@ -118,14 +146,14 @@
             <span class="text-white">This webpage was developed by the Team using basic languages such as,<br>HTML, Javascript, Jquery, Ajax, json, etc.</span>
           </div>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
 
-          <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
+        <nav class="navbar navbar-dark bg-dark">
+          <!--nav class="navbar navbar-light bg-light"-->
+            <div>
+              <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
+              </div>
+              <!--button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button-->
+            
           
           <h3 class="text-white h3">Meet The Team XD</h3>
 
@@ -137,6 +165,7 @@
           </button>
 
         </nav>
+        <ul class="list-group" id="result"></ul>
       </div>
 
 
@@ -146,7 +175,7 @@
       <table>
         <th colspan="2"><h1>The Team</h1></th>
         <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
+          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded" id="Shyamal">
             <img src="shyamal.jpg" class="card-img-top" alt="Shyamal" style="display: block;height: 18rem;object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Shyamal Bhatt, 311</h5>
@@ -156,7 +185,7 @@
         </tr>
         <tr>
           <td></td>
-          <td  align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
+          <td  align="center"><div class="card shadow p-3 mb-5 bg-white rounded" id="Parth">
             <img src="parth.jpg" class="card-img-top" alt="Parth" style="display: block;height: 18rem;object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Parth Gohil, 318</h5>
@@ -166,7 +195,7 @@
           </div></td>
         </tr>
         <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
+          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded" id="Tauhid">
             <img src="tauhid.jpg" class="card-img-top" alt="Tauhid" style="display: flex;height: 18rem;object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Khan Tauhid, 325</h5>
@@ -178,7 +207,7 @@
         </tr>
         <tr>
           <td></td>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
+          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded" id="Devansh">
             <img src="devansh.jpg" class="card-img-top" alt="Devansh" style="display: block;height: 18rem;object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Devansh Solani, 360</h5>
@@ -188,7 +217,7 @@
           </div></td>
         </tr>
         <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
+          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded" id="Devyesh">
             <img src="devyesh.jpg" class="card-img-top" alt="Devyesh" style="display: block;height: 18rem;object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title">Devyesh Thomas, 363</h5>
@@ -213,6 +242,11 @@
       </div>
 
     </div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- Optional JavaScript -->
     <script>
@@ -235,10 +269,35 @@
           modal.style.display = "none";
         }
       }
+      /*Jquery for search bar*/
+      $(document).ready(function(){
+      $('#search').keyup(function(){
+          var searchbar = document.getElementById("search").value;
+          var nodisplay = document.getElementById("result");
+          nodisplay.style.display = "block";
+          
+          if (searchbar != ""){
+              $('#result').html('');
+              var searchField = $('#search').val();
+              var regx = new RegExp(searchField, "i");
+              $.getJSON('profileData.json', function(data){
+                  $.each(data, function(key, value){
+                      if (value.name.search(regx) != -1){
+                          $('#result').append(`<a href="#${value.name}" class="text-decoration-none"><li class="list-group-item" >${value.name}</li></a>`);
+                      }
+                        /*$('#result').append(`<li class="list-group-item" >No Such Group Member :(</li>`);*/
+                  });
+                  
+              });
+          } else {
+              nodisplay.style.display = "none";
+          }
+
+              
+      });
+      
+  });
       </script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
   </body>
 </html>
