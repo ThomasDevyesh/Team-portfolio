@@ -15,11 +15,12 @@
     <style>
       body{
         background-color: rgb(207, 204, 204);
+        background-image: url("");
 
       }
       table{
         border-radius:10px;
-        background-color: rgb(255, 60, 60);
+        background-color: rgb(122, 255, 60);
         justify-content: center;
         align-items: center;
         margin: 5%;
@@ -31,7 +32,7 @@
             min-width: 50%;
             max-width: 80%;
             border-radius: 8px;
-            background-color: rgba(255, 49, 49, 0.712);
+            background-color: rgba(61, 61, 61, 0.842);
         }
         /* The Modal (background) */
           .modal {
@@ -78,11 +79,43 @@
         }
 
         .card{
-          width: 50%;
-          height: auto;
-          
-
+          width: 20%;
+          height: auto; 
         }
+        .list-group{
+          width: 20%;
+          margin-left: 20px;
+        }
+        li:hover{
+          width: 101%;
+          margin-left: 18px;
+        }
+        .text-decoration-none{
+          color: rgb(46, 46, 46);
+          font-family: Arial, Helvetica, sans-serif;
+          border-radius: 4px;
+        }
+        .text-decoration-none:hover{
+          color: rgb(0, 0, 0);
+        }
+        .feedback {
+          background-color : #31B0D5;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 4px;
+          border-color: #46b8da;
+        }
+        .feedback:hover{
+          margin: 20px;
+        }
+
+        #mybutton {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+        }
+
+
         @media only screen and (max-width: 500px) {
           .cover-container{
             margin-top: 20%;
@@ -93,6 +126,12 @@
             margin-left: 5%;
             margin-right: 5%;
           }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
         }
         @media only screen and (max-width: 1000px) {
           .cover-container{
@@ -104,13 +143,50 @@
             margin-left: 5%;
             margin-right: 5%;
           }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
         }
         
 
     </style>
+    <style>
+      .button {
+        transition: all 0.2s;
+
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.1s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
 
   </head>
-  <body>
+  <body id='mybody'>
     <div class="fixed-top">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
@@ -120,12 +196,12 @@
         </div>
         <nav class="navbar navbar-dark bg-dark">
 
-          <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
+            <div style="display: flex;">
+              <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="submit" name="btn-search" id="btn-search">Search</button>
+              </div>
+              
+            
           
           <h3 class="text-white h3">Meet The Team XD</h3>
 
@@ -137,108 +213,41 @@
           </button>
 
         </nav>
+        <ul class="list-group" id="result"></ul>
       </div>
+<!------------------------------------------------------------------------------------------>
+      <div class="cover-container d-grid w-100 h-100 p-30 mx-auto flex-column text-center">
+        
 
 
-
-    <div class="cover-container d-grid w-100 h-100 p-30 mx-auto flex-column text-center">
-
-      <table>
-        <th colspan="2"><h1>The Team</h1></th>
-        <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="shyamal.jpg" class="card-img-top" alt="Shyamal" style="display: block;height: 18rem;object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">Shyamal Bhatt, 311</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div></td>
-            <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td  align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="parth.jpg" class="card-img-top" alt="Parth" style="display: block;height: 18rem;object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">Parth Gohil, 318</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <!--a href="#" class="btn btn-primary">Go somewhere</a-->
-            </div>
-          </div></td>
-        </tr>
-        <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="tauhid.jpg" class="card-img-top" alt="Tauhid" style="display: flex;height: 18rem;object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">Khan Tauhid, 325</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <!--a href="#" class="btn btn-primary">Go somewhere</a-->
-            </div>
-          </div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="devansh.jpg" class="card-img-top" alt="Devansh" style="display: block;height: 18rem;object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">Devansh Solani, 360</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <!--a href="#" class="btn btn-primary">Go somewhere</a-->
-            </div>
-          </div></td>
-        </tr>
-        <tr>
-          <td align="center"><div class="card shadow p-3 mb-5 bg-white rounded">
-            <img src="devyesh.jpg" class="card-img-top" alt="Devyesh" style="display: block;height: 18rem;object-fit: cover;">
-            <div class="card-body">
-              <h5 class="card-title">Devyesh Thomas, 363</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <!--a href="#" class="btn btn-primary">Go somewhere</a-->
-            </div>
-          </div></td>
-          <td></td>
-        </tr>
-        <th colspan="2"><a id="myBtn" class="btn btn-outline-light btn-lg">Go somewhere</a></th><br>
-      </table>
-
-          
+            <div id="prepend-profile"></div>
+ 
+        <a id="myBtn" class="btn btn-outline-light btn-lg button"><span>Enter our Team</span></a><br>
     </div>
+
+
+<div id="mybutton">
+<button class="feedback"><a href="">Feedback</a></button>
+</div>
+
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+        <p>Buy Me a chokri</p>
       </div>
 
     </div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- Optional JavaScript -->
-    <script>
-      var modal = document.getElementById("myModal");
-
-      var btn = document.getElementById("myBtn");
-
-      var span = document.getElementsByClassName("close")[0];
-
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
-
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-      </script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    
   </body>
 </html>
