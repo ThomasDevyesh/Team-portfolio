@@ -1,0 +1,41 @@
+[
+    {
+        "image" : "devansh.jpg",
+        "name" : "devansh",
+        "rollno" : 360,
+        "linkedin" : "https://www.linkedin.com/in/devansh-solani-aa64a619b/",
+        "description" : "Researching, designing, implementing and managing software programs. Also a hedger, investor, arbitrageur, speculator in stock market."
+    },
+
+    {
+        "image" : "devyesh.jpg",
+        "name" : "devyesh",
+        "rollno" : 363,
+        "linkedin" : "https://www.linkedin.com/in/devyesh-thomas-b93ab71a1/",
+        "description" : "A cyber security enthusiast who is good at preventing and mitigating harm to—or destruction of—computer networks, applications, devices, and data."
+    },
+
+    {
+        "image" : "shyamal.jpg",
+        "name" : "shyamal",
+        "rollno" : 311,
+        "linkedin" : "https://www.linkedin.com/in/shyamal-bhatt-33a392195/",
+        "description" : "I am a data scientist who has evolved the way people look at AI and innovations. An excellent developer, investor, author and learner."
+    },
+
+    {
+        "image" : "tauhid.jpg",
+        "name" : "tauhid",
+        "rollno" : 325,
+        "linkedin" : "https://www.linkedin.com/in/tauhid-khan-24bb45177/",
+        "description" : "I work closely with development teams to ensure accurate integration of machine learning models into firm platforms and build new models."
+    },
+
+    {
+        "image" : "parth.jpg",
+        "name" : "parth",
+        "rollno" : 318,
+        "linkedin" : "https://www.linkedin.com/in/parth-gohil-3a06951b4/",
+        "description" : "Eye-poppingly prolific, full stack web developer with a passion for metrics. Love to experience new stuff that pops-in everyday in the industry."
+    }
+]
