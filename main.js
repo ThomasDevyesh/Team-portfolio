@@ -87,7 +87,7 @@
         }
         else{
           console.log(searchedName)
-            alert("To perform this action You need to Buy Me Netflix Acc and Buy our premimum Membership, Or just Refresh");
+            alert("To perform this action You need to Buy Me Netflix Acc, Or just Refresh and Retry");
         }
     }
     else{
