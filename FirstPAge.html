@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  
+    <title>Meet The Team</title>
+
+    <script src="https://kit.fontawesome.com/01c60f5aa6.js" crossorigin="anonymous"></script>
+
+    <style>
+      body{
+        background-color: rgb(207, 204, 204);
+
+      }
+
+        .cover-container {
+          margin: 7%;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          min-width: 50%;
+          max-width: 80%;
+          border-radius: 8px;
+          background-color: rgba(61, 61, 61, 0.842);
+        }
+        /* The Modal (background) */
+          .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(243, 243, 243); /* Black w/ opacity */
+          }
+
+          /* Modal Content */
+          .modal-content {
+            background-color: #f3f3f3e7;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 2%;
+            padding: 10px;
+            border: none;
+            width: 60%;
+            height: auto;
+          }
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          margin: 0;
+          float: right;
+          font-size: 34px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .card{
+          width: 20%;
+          height: auto; 
+        }
+        .list-group{
+          width: 20%;
+          margin-left: 20px;
+        }
+        li:hover{
+          width: 101%;
+          margin-left: 18px;
+        }
+        .text-decoration-none{
+          color: rgb(46, 46, 46);
+          font-family: Arial, Helvetica, sans-serif;
+          border-radius: 4px;
+        }
+        .text-decoration-none:hover{
+          color: rgb(0, 0, 0);
+        }
+        .feedback {
+          background-color : #31B0D5;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 4px;
+          border-color: #46b8da;
+        }
+        .feedback:hover{
+          margin: 20px;
+        }
+
+        #mybutton {
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+        }
+
+
+        @media only screen and (max-width: 500px) {
+          .cover-container{
+            margin-top: 20%;
+            min-width: 100%;
+          }
+          .card{
+            width: 95%;
+            margin-left: 5%;
+            margin-right: 5%;
+          }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
+        }
+        @media only screen and (max-width: 1000px) {
+          .cover-container{
+            margin-top: 20%;
+            min-width: 100%;
+          }
+          .card{
+            width: 95%;
+            margin-left: 5%;
+            margin-right: 5%;
+          }
+          .list-group{
+            width: max-content;
+          }
+          .list-group-item{
+          object-fit: contain;
+        }
+        }
+        
+
+    </style>
+    <style>
+      .button {
+        transition: all 0.2s;
+
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.1s;
+        color: #fff;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+        color: #000;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <div class="fixed-top">
+      <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Advanced Web Programming</h5>
+            <span class="text-white">This webpage was developed by the Team using basic languages such as,<br>HTML, Javascript, Jquery, Ajax, json, etc.</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+
+            <div style="display: flex;">
+              <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="submit" name="btn-search" id="btn-search">Search</button>
+              </div>
+              
+            
+          
+          <h3 class="text-white h3">Meet The Team XD</h3>
+
+
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-info-circle fa-2x" style="color:rgba(255, 255, 255, 0.788);"></i>
+          </button>
+
+        </nav>
+        <ul class="list-group" id="result"></ul>
+      </div>
+<!------------------------------------------------------------------------------------------>
+      <div class="cover-container d-grid w-100 h-10 p-30 mx-auto flex-column text-center">
+        
+
+
+            <div id="prepend-profile"></div>
+ 
+        <a id="myBtn" class="btn btn-outline-light btn-lg button"><span>Enter our Team</span></a><br>
+    </div>
+
+
+<div id="mybutton">
+<button class="feedback shadow">Feedback</button>
+</div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!------------------------->
+        <div class="container-contact100 close">
+          <div class="wrap-contact100">
+            <form class="contact100-form validate-form">
+              <span class="contact100-form-title">
+                CONNECT WITH US
+              </span>
+      
+              <div  class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+                <span class="label-input100">FULL NAME *</span>
+                <input id="full-name" class="input100" type="text" name="name" placeholder="Enter Your Name">
+              </div>
+      
+              <div  class="wrap-input100 validate-input bg1" data-validate="Please Type Your RollNo">
+                <span class="label-input100">YOUR ROLL NUMBER *</span>
+                <input id="rollno" class="input100" type="text" name="name" placeholder="Enter Your roll no">
+              </div>
+      
+              <div  class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
+              <span class="label-input100">EMAIL *</span>
+                <input id="email" class="input100" type="text" name="email" placeholder="Enter Your Email ">
+              </div>
+      
+              <div  class="wrap-input100 bg1 rs1-wrap-input100">
+                <span class="label-input100">PHONE</span>
+                <input id="phone" class="input100" type="text" name="phone" placeholder="Enter Number Phone">
+              </div>
+      
+              <div  class="wrap-input100 validate-input bg1 rs1-wrap-input100">
+                <span class="label-input100">LINKEDIN *</span>
+                <input id="linkedin" class="input100" type="text" name="phone" placeholder="Enter LINKEDIN PROFILE LINK">
+              </div>
+      
+              <div  class="wrap-input100 validate-input validate-input bg1 rs1-wrap-input100">
+                <span class="label-input100">PROFILE *</span>
+                <input id="profile" class="input100" type="text" name="phone" placeholder="ENTER PROFILE IMAGE LINK">
+              </div>
+      
+              <div  class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+                <span class="label-input100">DESCRIPTION</span>
+                <textarea id="description" class="input100" name="message" placeholder="Your message here..."></textarea>
+              </div>
+      
+              <div class="container-contact100-form-btn">
+                <button id="btn" class="contact100-form-btn">
+                  <span>
+                    Submit
+                    <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-------------------------->
+      </div>
+
+    </div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script src="vendor/animsition/js/animsition.min.js"></script>
+
+<script src="vendor/bootstrap/js/popper.js"></script>
+
+<script src="vendor/select2/select2.min.js"></script>
+
+    <!-- Optional JavaScript -->
+    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      let userdata = [];
+      // example {id:1592304983049, title: 'Deadpool', year: 2015}
+      const adddata = (ev)=>{
+        ev.preventDefault();  //to stop the form submitting
+        let data = {
+          FULLNAME: document.getElementById('full-name').value.trim(),
+          ROLLNO: document.getElementById('rollno').value,
+          EMAIL: document.getElementById('email').value,
+          PHONE: document.getElementById('phone').value,
+          LINKEDIN: document.getElementById('linkedin').value,
+          PROFILE: document.getElementById('profile').value,
+          DESCRIPTION: document.getElementById('description').value
+        }
+        userdata.push(data);
+        document.forms[0].reset(); // to clear the form for the next entries
+        
+        //saving to localStorage
+        localStorage.setItem('MyUserData', JSON.stringify(userdata) );
+        alert("Check local Storage to find your data");
+      }
+      document.getElementById('btn').addEventListener('click', adddata);
+
+    </script>
+    
+  </body>
+</html>
