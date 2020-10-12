@@ -21,7 +21,7 @@
 //------------------------------------------------------------------------------------
       window.addEventListener('load', function(){
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET', 'http://localhost/team-portfolio/profileData.json');
+        ourRequest.open('GET', 'http://awpstuff/profileData.json');
         ourRequest.onload = function (){
         var ourData = JSON.parse(ourRequest.responseText);
         window.NamesInJson = [];
@@ -51,15 +51,15 @@
               $('#result').html('');
               var searchField = $('#search').val();
               var regx = new RegExp(searchField, "i");
-              $.getJSON('profileData.json', function(data){
-                  $.each(data, function(key, value){
-                      if (value.name.search(regx) != -1){
-                          $('#result').append(`<a href="#${value.name}" class="text-decoration-none"><li class="list-group-item" >${value.name}</li></a>`);
-                      }
+              //UpdateVariables(getLocalData());
+              $.each(NamesInJson, function(key, value){
+                  if (value.search(regx) != -1){
+                      $('#result').append(`<a href="#${value}" class="text-decoration-none"><li class="list-group-item" >${value}</li></a>`);
+                  }
                         /*$('#result').append(`<li class="list-group-item" >No Such Group Member :(</li>`);*/
                   });
                   
-              });
+              
           } else {
               nodisplay.style.display = "none";
           }
@@ -73,12 +73,21 @@
   // after search is clicked
   $('#btn-search').click(function(){
     var searchedName = document.getElementById('search').value.toLowerCase();
+    //Fetching from LocalStorage
+    UserLocalDAta = getLocalData();
+    UpdateVariables(UserLocalDAta);
     var IndexOfSearchedName = NamesInJson.indexOf(searchedName);
+
     // if searched name is not available in 'NamesInJson' then .indexof returns -1
     if (IndexOfSearchedName != -1){
         if (StoreSearchedNames.indexOf(searchedName) == -1){
             StoreSearchedNames.push(searchedName);
-            prependProfile(IndexOfSearchedName);
+            if(IndexOfSearchedName>4){
+              prependNewUserCard(IndexOfSearchedName-5);
+            }
+            else{
+              prependProfile(IndexOfSearchedName);
+            }
             var close = document.getElementsByClassName("close")[0];
             close.onclick = function(){
               document.getElementById(searchedName).style.display = "none";
@@ -98,6 +107,32 @@
 }
 ourRequest.send();
 
+getLocalData = () =>{
+  let d = JSON.parse(localStorage.getItem('MyUserData'));
+  return d;
+}
+
+function UpdateVariables(data){
+  for(let i = 0; i<data.length; i++){
+    if (NamesInJson.indexOf(data[i].FULLNAME) == -1){
+      NamesInJson.push(data[i].FULLNAME.toLowerCase());
+    }
+    else{
+      continue;
+    }
+  }
+}
+function prependNewUserCard(profileIndex){
+  td = getLocalData();
+$('#prepend-profile').prepend(`
+  <div>
+  <h2>${td[profileIndex].FULLNAME}</h2>
+  <i>${td[profileIndex].DESCRIPTION}</i>
+  <a>${td[profileIndex].LINKEDIN}</a>
+  <b>${td[profileIndex].PHONE}</b>
+  </div>
+`);
+}
 function prependProfile(profileIndex){
     $('#prepend-profile').prepend(`
     <div class="added-profile">
