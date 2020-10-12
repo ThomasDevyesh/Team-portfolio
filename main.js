@@ -89,14 +89,17 @@
               prependProfile(IndexOfSearchedName);
             }
             var close = document.getElementsByClassName("close")[0];
+            //var closeusr = document.getElementsByClassName("closeusr")[0];
             close.onclick = function(){
               document.getElementById(searchedName).style.display = "none";
               StoreSearchedNames.pop(searchedName);
             };
+            
+            
         }
         else{
-          console.log(searchedName)
-            alert("To perform this action You need to Buy Me Netflix Acc, Or just Refresh and Retry");
+          //console.log(searchedName)
+            alert("Profile Already Listed, or there was some error. Refresh and Retry");
         }
     }
     else{
@@ -114,7 +117,8 @@ getLocalData = () =>{
 
 function UpdateVariables(data){
   for(let i = 0; i<data.length; i++){
-    if (NamesInJson.indexOf(data[i].FULLNAME) == -1){
+    let check = NamesInJson.indexOf(data[i].FULLNAME.toLowerCase());
+    if (check == -1){
       NamesInJson.push(data[i].FULLNAME.toLowerCase());
     }
     else{
@@ -125,12 +129,34 @@ function UpdateVariables(data){
 function prependNewUserCard(profileIndex){
   td = getLocalData();
 $('#prepend-profile').prepend(`
-  <div>
-  <h2>${td[profileIndex].FULLNAME}</h2>
-  <i>${td[profileIndex].DESCRIPTION}</i>
-  <a>${td[profileIndex].LINKEDIN}</a>
-  <b>${td[profileIndex].PHONE}</b>
+
+
+  <div class="added-profile">
+
+    <div class="card mb-3" style="width: 90%;border-radius: 8px;margin-left: 5%;" id="${td[profileIndex].FULLNAME}">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="DefaultUser.png" class="card-img" alt="${td[profileIndex].FULLNAME}" style="display: block;height: 15rem;object-fit: contain;border: 2px solid #000;margin: 10px;">
+      </div>
+      <div class="col-md-8">
+
+      <span class="close closeusr" style="margin-right: 2%">&times;</span>
+
+        <div class="card-body">
+        <h5 class="card-title">${td[profileIndex].FULLNAME}, ${td[profileIndex].ROLLNO}</h5>
+          <p class="card-text">${td[profileIndex].DESCRIPTION}</p>
+          
+        </div>
+        <div class="align-bottom" style="padding-left: 90%;">
+          <a href="${td[profileIndex].LINKEDIN}"><i class="fab fa-linkedin fa-3x" style="color:rgb(0, 0, 0)"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    
   </div>
+
+    </div>
 `);
 }
 function prependProfile(profileIndex){
