@@ -21,7 +21,7 @@
 //------------------------------------------------------------------------------------
       window.addEventListener('load', function(){
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET', 'http://awpstuff/profileData.json');
+        ourRequest.open('GET', 'http://localhost/Team-portfolio/profileData.json');
         ourRequest.onload = function (){
         var ourData = JSON.parse(ourRequest.responseText);
         window.NamesInJson = [];
